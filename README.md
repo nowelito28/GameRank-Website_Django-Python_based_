@@ -9,14 +9,15 @@ GameRank is a full-stack web application built with Django for exploring, rating
 
 ## ✨ Features
 
-- 🔐 **Authentication system** (login with protected resources).
-- 🎲 **Game catalog**: games are loaded from an XML source and two public APIs (FreeToGame and MMOBomb).
+- 🔐 **Authentication system** (login with protected resources):
+- - **Global login password**: xx34d23 (to access any resource different from the main -> '/').
+- - **User login or registration**: Use individual profiles getting registered and login in this app.
+- 🎲 **Game catalog**: games are loaded from an XML source and two public APIs (FreeToGame and MMOBomb), ordered by score average.
 - 💬 **User interactions**: comment, rate (0–5 stars), like/dislike comments.
-- 🔎 **Game filters** by platform and genre.
+- 🔎 **Game filters** by platform, genre and publisher.
 - 🧾 **Game detail pages** with user ratings, average score, and comment threads.
-- 🧠 **Profile customization**: font size, type, and user configuration.
-- 📥 **Game import**: superusers can import data from external sources via a single click.
-- 📄 **JSON endpoint**: for each game at `/juego/<id>.json`.
+- 🧠 **Profile customization**: font size and type, and also the username.
+- 📥 **Game import/export**: it is import data from external sources automatically and you can export also each data game with a simple click.
 - 🧪 **Test coverage**: with Django's built-in test suite (unit and end-to-end).
 - 🌍 **Internationalization**: available in Spanish and English.
 - 📱 **Responsive UI**: Bootstrap-based modern frontend.
@@ -28,7 +29,7 @@ GameRank is a full-stack web application built with Django for exploring, rating
 - **Backend**: Python 3.13, Django 5
 - **Frontend**: HTML5, Bootstrap 4, HTMX
 - **Database**: SQLite
-- **Deployment**: PythonAnywhere
+- **Launch**: PythonAnywhere and even in localhost by Django's runserver
 - **Testing**: Django Test Framework
 - **External APIs**: FreeToGame, MMOBomb
 
@@ -42,7 +43,7 @@ The project is deployed and available at:
 🗓️ Valid until August 2025  
 🔐 Default credentials (for demo purposes):  
 - **Admin Panel**: `noelito / 123`  
-- **Regular Users**: `lucia / lucialucia12`, `gonza / gonza14`
+- **Regular Users**: `lucia / lucialucia12`, `gonza / gonzagonza14`
 
 ---
 
@@ -59,12 +60,6 @@ The project is deployed and available at:
 Bachelor’s Degree in Telecommunications Engineering  
 📫 n.rodriguezp.2022@alumnos.urjc.es  
 🌐 GitHub: [@nowelito28](https://github.com/nowelito28)
-
----
-
-## 📄 License
-
-This project is licensed for educational and demonstration purposes.
 
 ---
 
@@ -87,7 +82,7 @@ cd Middleware-Java_based-  # or the real repo name
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install project dependencies
 pip install -r GameRank/requirements.txt
 
 # Navigate to Django project folder
@@ -100,4 +95,4 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 
 # Run the development server
-python manage.py runserver
+python3 manage.py runserver
