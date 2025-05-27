@@ -1,0 +1,27 @@
+{% extends 'games/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Not Found" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/error.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+    <style>
+        body {
+        background-image: url('{% static 'images/404.jpg' %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <h1>404</h1>
+    <p class="lead">{% trans "Oops, page not found :(" %}</p>
+</div>
+{% endblock %}

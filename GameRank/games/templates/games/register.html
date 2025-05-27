@@ -1,0 +1,58 @@
+{% extends 'games/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Registration" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <!-- Estilos específicos de registro -->
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card register-card">
+        <div class="card-header">
+            {% trans "GAMERANK REGISTRATION" %}
+        </div>
+
+        <!-- Formulario de registro:
+             Utilizar parámetros del form UserCreationForm de Django-->
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group text-center">
+                <label for="id_username">{% trans "Username:" %}</label><br>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group text-center">
+                <label for="id_password1">{% trans "Password:" %}</label><br>
+                {{ form.password1 }}
+                {% for error in form.password1.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="form-group text-center">
+                <label for="id_password2">{% trans "Confirm Password:" %}</label><br>
+                {{ form.password2 }}
+                {% for error in form.password2.errors %}
+                    <div class="text-danger small">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">{% trans "Register" %}</button>
+            </div>
+        </form>
+
+        <!-- Enlace a login -->
+        <div class="back-to-register text-center">
+            <p>{% trans "Already signed up?" %} <a href="{% url 'login' %}">{% trans "Login here" %}</a></p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

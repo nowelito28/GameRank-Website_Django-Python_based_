@@ -1,0 +1,55 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Followed Games" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/games.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="rated-container">
+    <div class="rated-card">
+        <!-- Encabezado -->
+        <div class="rated-card-header">
+            {% trans "Games Followed by" %} {{ user.username }}
+        </div>
+
+        <!-- Lista de juegos seguidos -->
+        <ul class="list-group">
+            {% for follow in followed_games %}
+                <li class="list-group-item rated-game-item">
+                    <!-- Imagen del juego -->
+                    <img src="{{ follow.game.thumbnail }}" class="rated-game-item-img" style="max-width: 300px;" />
+
+                    <div class="rated-game-item-info">
+                        <!-- Título -->
+                        <h3>{{ follow.game.title }}</h3>
+
+                        <!-- Info del juego -->
+                        <p>
+                            <strong>{% trans "Genre:" %}</strong> {{ follow.game.genre }} |
+                            <strong>{% trans "Platform:" %}</strong> {{ follow.game.platform }} |
+                            <strong>{% trans "Average rating:" %}</strong> {{ follow.game.average_rating }} {% trans "stars" %}
+                        </p>
+
+                        <!-- Botones -->
+                        <div class="rated-btn-group">
+                            <a href="{% url 'game_detail' follow.game.id %}" class="btn btn-info rated-btn full-btn">{% trans "View Details" %}</a>
+                            <a href="{% url 'unfollow_game' follow.game.id %}" class="btn btn-danger rated-btn full-btn">{% trans "Unfollow" %}</a>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <p style="text-align: center;">{% trans "No games followed yet!!!" %}</p>
+            {% endfor %}
+        </ul>
+
+        <!-- Paginación -->
+        {% include "games/pages_buttons.html" with page_obj=followed_games page_param="page" %}
+    </div>
+</div>
+{% endblock %}

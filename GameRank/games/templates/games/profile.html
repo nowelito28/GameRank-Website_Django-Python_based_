@@ -1,0 +1,48 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card profile-card">
+        <!-- Cabecera con nombre del usuario -->
+        <div class="card-header">
+            {% trans "Profile of" %} {{ user.username }}
+        </div>
+
+        <!-- Estadísticas del usuario -> 2 decimales como mucho -->
+        <div class="form-group">
+            <p><strong>{% trans "Number of rates done:" %}</strong> {{ vote_count }}</p>
+            <p><strong>{% trans "Average rating of the user:" %}</strong> {{ average_rating|floatformat:2 }} {% trans "stars" %}</p>
+        </div>
+
+        <!-- Enlace a los juegos valorados -->
+        <div class="btn-group mt-3">
+            <a href="{% url 'rated_games' %}" class="btn btn-blue">{% trans "Rated games" %}</a>
+        </div>
+
+        <!-- Enlace a los juegos seguidos -->
+        <div class="btn-group mt-3">
+            <a href="{% url 'followed_games' %}" class="btn btn-blue">{% trans "Followed games" %}</a>
+        </div>
+
+        <!-- Enlace a configuración del usuario -->
+        <div class="btn-group mt-3">
+            <a href="{% url 'user_settings' %}" class="btn btn-blue-dark">{% trans "Settings" %}</a>
+        </div>
+
+        <!-- Botón para cerrar sesión -->
+        <div class="mt-3">
+            <a href="{% url 'logout' %}" class="btn btn-logout">{% trans "LOGOUT" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

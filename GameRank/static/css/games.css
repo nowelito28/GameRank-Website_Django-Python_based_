@@ -1,0 +1,422 @@
+/* Estilo para la sección de bienvenida */
+.title-section {
+    background-image: url("../images/setup.png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1; /* Asegura que la cabecera no se solape */
+}
+
+/* Fondo animado que cubre toda la página */
+.background-animation {
+    position: fixed; /* Asegura que el fondo se quede fijo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo cuando haces scroll */
+    z-index: -1; /* Asegura que el fondo esté detrás de todo el contenido */
+}
+
+/* Ajuste para el texto de bienvenida */
+.title-section h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    z-index: 2; /* Asegura que el texto esté por encima del fondo */
+}
+
+/* Estilo para las tarjetas de los juegos */
+.game-card {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+/* Estilo del título del juego en cada tarjeta */
+.card-title {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Para los botones y elementos interactivos */
+.btn-follow, .btn-info {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.btn-follow:hover, .btn-info:hover {
+    opacity: 0.8;
+}
+
+/* Paginación */
+#pagination-controls button {
+    margin: 0 5px;
+}
+
+/* Ajuste para el fondo fijo */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo general */
+}
+
+#pagination-controls button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #1e1e2f;
+    color: white;
+    border: 1px solid #f39c12;
+    border-radius: 5px;
+}
+
+#pagination-controls button:hover {
+    background-color: #f39c12;
+    color: #1e1e2f;
+    cursor: pointer;
+}
+
+#pagination-controls span {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.page-link {
+    background-color: #222;
+    color: #0ff;
+    border: 1px solid #0ff;
+}
+.page-item.active .page-link {
+    background-color: #0ff;
+    color: #000;
+    border-color: #0ff;
+}
+
+
+/**/
+
+/* Fondo de toda la página */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2c3e50;
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #000305;
+}
+
+/* Estilo para la cabecera del juego con imagen */
+.game-header {
+    background-image: url('{{ game.thumbnail }}'); /* Usar la imagen del juego como fondo */
+    background-size: cover; /* Aseguramos que cubra toda la cabecera */
+    background-position: center;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.game-header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.game-header p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Detalles del juego */
+.game-detail-container {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo suave y transparente */
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 80px !important;
+}
+
+/* Estilo para los botones */
+.btn-custom {
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.additional-links a {
+    margin-right: 15px;
+    margin-top: 20px;
+    display: inline-block; /* Asegura que los botones estén uno al lado del otro */
+}
+
+/* Espaciado entre los botones de seguir, ver y jugar */
+.additional-links {
+    margin-top: 20px;
+}
+
+
+.comments-section h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.comment-card .card-body {
+    padding: 20px;
+}
+
+/* Estilo para los formularios de valoración y comentario */
+.rating-comment-form input, .rating-comment-form textarea {
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.rating-comment-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+}
+
+.back-to-home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message-box {
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para mensajes de éxito */
+.message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Estilos para mensajes de error */
+.message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.btn-link-freetogame {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: 0.3s ease;
+}
+.btn-link-freetogame:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-link-playnow {
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: 0.3s ease;
+}
+.btn-link-playnow:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+.btn-link-freetogame {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: 0.3s ease;
+}
+.btn-link-freetogame:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-link-playnow {
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 18px;
+    transition: 0.3s ease;
+}
+
+.btn-link-playnow:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+/* Estilo para el botón de Submit */
+.btn-submit-rating {
+    background-color: #007bff; /* Azul Bootstrap */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgb(3, 3, 3);
+}
+
+.btn-submit-rating:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-submit-rating:hover {
+    background-color: #0033ff;
+    transform: scale(1.02);
+}
+
+/**/
+
+.rated-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rated-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.rated-card-header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.rated-btn {
+    font-size: 1em;
+}
+
+.rated-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.rated-btn.full-btn {
+    flex: 1 1 0;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.rated-game-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rated-game-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.rated-game-item-info {
+    width: 100%;
+    text-align: center;
+}
+
+.rated-game-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.rated-game-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.rated-comment {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.rated-comment .rating {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.rated-comment .date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.rated-comment .text {
+    margin-top: 5px;
+}

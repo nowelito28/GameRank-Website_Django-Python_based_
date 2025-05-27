@@ -58,7 +58,7 @@ The project is deployed and available at:
 
 **Noel Rodríguez Pérez**  
 Bachelor’s Degree in Telecommunications Engineering  
-📫 n.rodriguezp.2022@alumnos.urjc.es  
+📫 n.rodriguezp.2022@alumnos.urjc.es <--> noelrp240514@gmail.com
 🌐 GitHub: [@nowelito28](https://github.com/nowelito28)
 
 ---

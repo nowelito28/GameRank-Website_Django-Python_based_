@@ -1,0 +1,39 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Settings" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="settings-container">
+    <div class="card settings-card">
+        <div class="card-header">
+            {% trans "User Settings" %}
+        </div>
+
+        <div class="card-body">
+            <!-- Mostrar mensaje de éxito -->
+            {% if success_message %}
+                <div class="alert alert-success" role="alert">
+                    {{ success_message }}
+                </div>
+            {% endif %}
+
+            <!-- Formulario de configuración -->
+            <form method="POST" class="settings-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn settings-btn-primary mt-3">{% trans "Save Changes" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

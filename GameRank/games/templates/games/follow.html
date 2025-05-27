@@ -1,0 +1,39 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Successful action" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="text-center follow-container {% if action == 'follow' %}follow-success{% elif action == 'unfollow' %}follow-danger{% endif %}">
+    <!-- Imagen del juego -->
+    <img src="{{ game.thumbnail }}" alt="{{ game.title }}" class="game-image mb-4">
+
+    <!-- Mensaje principal según la acción -->
+    <div class="card-header">
+        {% if action == "follow" %}
+            {% trans "You are now following the game:" %}<br>
+        <span style="font-size: 1.2em; font-weight: bold; color: black">{{ game.title }}</span>
+        {% elif action == "unfollow" %}
+            {% trans "You have stopped following the game:" %}<br>
+        <span style="font-size: 1.2em; font-weight: bold; color: black">{{ game.title }}</span>
+        {% else %}
+            {% trans "Action processed successfully!!!" %}
+        {% endif %}
+    </div>
+
+    <!-- Mensaje adicional -->
+    {% if action == "follow" %}
+        <p class="lead">{% trans "Now you will be receiving updates related to this game" %}</p>
+    {% elif action == "unfollow" %}
+        <p class="lead">{% trans "You will not receive any update more related to this game" %}</p>
+    {% endif %}
+
+</div>
+{% endblock %}

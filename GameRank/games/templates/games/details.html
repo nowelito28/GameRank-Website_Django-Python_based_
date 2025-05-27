@@ -1,0 +1,134 @@
+{% extends "games/base.html" %}
+{% load static %}
+<!-- Internalización del template -->
+{% load i18n %}
+{% block title %}{% trans "Game Details" %} - {{ game.title }}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon => imagen del juego -->
+    <link rel="icon" href="{{ game.thumbnail }}" type="image/png">
+    <script src='https://unpkg.com/htmx.org@2.0.4'></script>
+    <link rel="stylesheet" href="{% static 'css/games.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container game-detail-container" style="margin-bottom: 50px;">
+        <!-- Cabecera con imagen grande -->
+        <div class="game-header" style="background-image: url('{{ game.thumbnail }}')">
+            <h1>{{ game.title }}</h1>
+            <p><strong>{% trans "Platform:" %}</strong> {{ game.platform }} | <strong>{% trans "Genre:" %}</strong> {{ game.genre }} | <strong>{% trans "Developer:" %}</strong> {{ game.developer }}</p>
+        </div>
+
+        <!-- Información adicional del juego -->
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="{{ game.thumbnail }}" alt="{{ game.title }}" class="img-fluid rounded shadow-lg mb-3">
+                <!-- Botones de enlaces externos -->
+                <div class="d-flex justify-content-center gap-2 mb-2">
+                    <a href="{{ game.freetogame_profile_url }}" class="btn btn-link-freetogame mx-1" target="_blank">{% trans "View in" %} FreeToGame</a>
+                    <a href="{{ game.game_url }}" class="btn btn-link-playnow mx-1" target="_blank">{% trans "Play Now" %}</a>
+                </div>
+
+                <!-- Botón para seguir o dejar de seguir el juego -->
+                {% if user.is_authenticated %}
+                    {% if is_following %}
+                        <form method="POST" action="{% url 'unfollow_game' game.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger mt-2" style="min-width: 300px;">{% trans "Unfollow Game" %}</button>
+                        </form>
+                    {% else %}
+                        <form method="POST" action="{% url 'follow_game' game.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success mt-2" style="min-width: 300px;">{% trans "Follow Game" %}</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+            <div class="col-md-8">
+                <h3>{% trans "Launch date:" %}</h3>
+                <p>{{ game.release_date }}</p>
+                <h3>{% trans "Average rating:" %}</h3>
+                <p>
+                    {% blocktrans with rating=game.average_rating votes=game.vote_count %}
+                        {{ rating }} ({{ votes }} votes)
+                    {% endblocktrans %}
+                </p>
+                <h3>{% trans "Description:" %}</h3>
+                <p>{{ game.description }}</p>
+
+                <!-- Botones JSON y XML -->
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                    <a href="{% url 'game_json' game.id %}" class="btn btn-info" target="_blank" style="margin-right: 10px;">
+                        {% trans "View as JSON" %}
+                    </a>
+                    <a href="{% url 'game_xml' game.id %}" class="btn btn-info" target="_blank" style="margin-left: 10px;">
+                        {% trans "View as XML" %}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Título y botón HTMX centrados: -->
+        <!-- Botón para activar o desactivar HTMX: Cambiar dinámica a no dinámica y viceversa
+        Mandar parámetro en la URL => htmx_toggle
+        en la url de la misma vista, ej => http://127.0.0.1:8000/LIS1-344/?htmx_toggle=true
+        -> is_dinamic = true cambiar a-> ?htmx_toggle=false -> Desactivar HTMX => next is_dinamic = false
+        -> is_dinamic = false cambiar a-> ?htmx_toggle=true -> Activar HTMX => next is_dinamic = true -->
+        <!-- Botón para activar o desactivar HTMX alineado a la derecha -->
+        <div class="text-center mt-5 mb-4">
+            <h2 class="mb-3">{% trans "Comments:" %}</h2>
+            <a href="?htmx_toggle={% if is_dynamic %}false{% else %}true{% endif %}" class="btn btn-warning">
+                {% if is_dynamic %}
+                    {% trans "Disable dynamic comments with HTMX" %}
+                {% else %}
+                    {% trans "Enable dynamic comments with HTMX" %}
+                {% endif %}
+            </a>
+        </div>
+
+        <!-- Mostrar los mensajes de error o éxito -->
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert message-box {{ message.tags }}">
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Sección de comentarios: -->
+        <!-- Esta parte se maneja con HTMX si es dinámica:
+        - Realiza la solicitud para recargar los comentarios
+        - Se activa en la carga de la página y cada 30 segundos
+        - La actualización se inyecta en sección => comments-section
+        Si no es dinámica solo mostrar comentarios-->
+        {% if is_dynamic %}
+        <!-- Sustituir el template que devuelve la vista 'game_detail' con HTMX
+         Recargarla cada 30 segundos
+         Sustituir el template que devuelve la vista 'game_detail' por el siguiente html del div (coments-section-container) -->
+            <div
+                hx-get="{% url 'game_detail' game.id %}"
+                hx-trigger="load, change, every 30s"
+                hx-target="#comments-section-container"
+                hx-swap="innerHTML">
+            </div>
+            <div id="comments-section-container"></div> <!-- Sustituir con la sección de comentarios dinámicos -> #comments-section-container -->
+        {% else %}
+            <!-- Si no es dinámico, solo mostramos los comentarios estáticos -->
+            {% include 'games/comments_section.html' %}
+        {% endif %}
+
+        <!-- Formulario para valorar y comentar -> nombre del cuerpo del post con el formulario = rate_comment-->
+        <div class="row mt-5">
+            <div class="col-md-12 rating-comment-form">
+                <h3 class="text-center">{% trans "Rate and/or Comment:" %}</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ rating_comment_form.as_p }}
+                    <button type="submit" name="rate_comment" class="btn btn-submit-rating">{% trans "Submit Rating and/or Comment" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

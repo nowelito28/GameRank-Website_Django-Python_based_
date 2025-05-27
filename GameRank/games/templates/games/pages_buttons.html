@@ -1,0 +1,54 @@
+{% comment %}
+Fragmento de paginación que mantiene filtros en los botones.
+Recibe:
+- page_obj: objeto Paginator
+- page_param: nombre del parámetro de página (ej: "page")
+- query_string: string con los filtros activos ya codificados (sin incluir el parámetro 'page')
+{% endcomment %}
+
+{% load static %}
+{% load i18n %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+{% endblock %}
+
+{% if page_obj.paginator.num_pages > 1 %}
+<nav class="mt-3">
+    <ul class="pagination justify-content-center">
+
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if query_string %}{{ query_string }}&{% endif %}{{ page_param }}=1">&laquo;&laquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?{% if query_string %}{{ query_string }}&{% endif %}{{ page_param }}={{ page_obj.previous_page_number }}">&laquo;</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo;&laquo;</span></li>
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+        {% endif %}
+
+        <li class="page-item active">
+            <span class="page-link">
+                {% blocktrans with page=page_obj.number num_pages=page_obj.paginator.num_pages %}
+                    Page {{ page }} of {{ num_pages }}
+                {% endblocktrans %}
+            </span>
+        </li>
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if query_string %}{{ query_string }}&{% endif %}{{ page_param }}={{ page_obj.next_page_number }}">&raquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?{% if query_string %}{{ query_string }}&{% endif %}{{ page_param }}={{ page_obj.paginator.num_pages }}">&raquo;&raquo;</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            <li class="page-item disabled"><span class="page-link">&raquo;&raquo;</span></li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}

@@ -1,0 +1,38 @@
+<!-- Combinaciones de likes y dislikes -->
+<div id="like-buttons-{{ comment.id }}" class="text-right mt-2">
+    {% for option, label in like_options %}
+        {% if like %}
+            {% if option == 'like' %}
+                {% with is_active=like.like count=comment.likes_count active_class='btn-success' %}
+                    {% if not is_active %}
+                        {% with active_class='btn-outline-secondary' %}
+                            {% include "games/like_button.html" %}
+                        {% endwith %}
+                    {% else %}
+                        {% include "games/like_button.html" %}
+                    {% endif %}
+                {% endwith %}
+            {% else %}
+                {% with is_active=like.dislike count=comment.dislikes_count active_class='btn-danger' %}
+                    {% if not is_active %}
+                        {% with active_class='btn-outline-secondary' %}
+                            {% include "games/like_button.html" %}
+                        {% endwith %}
+                    {% else %}
+                        {% include "games/like_button.html" %}
+                    {% endif %}
+                {% endwith %}
+            {% endif %}
+        {% else %}
+            {% if option == 'like' %}
+                {% with count=comment.likes_count active_class='btn-outline-secondary' %}
+                    {% include "games/like_button.html" %}
+                {% endwith %}
+            {% else %}
+                {% with count=comment.dislikes_count active_class='btn-outline-secondary' %}
+                    {% include "games/like_button.html" %}
+                {% endwith %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,641 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-20 14:14+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: games/forms.py:14
+msgid ""
+"Rating range (0-5), 0 is the worst and 5 is the best. Only 1 vote per user:"
+msgstr ""
+"Valoración (0-5), 0 es la peor y 5 es la mejor. Solo 1 voto por usuario:"
+
+#: games/forms.py:21
+msgid ""
+"Comment your opinion about this game, with or whitout rating (optional):"
+msgstr ""
+"Comenta tu opinión acerca de este juego, con o sin valoración (opcional):"
+
+#: games/forms.py:24
+msgid "Write your comment..."
+msgstr "Escribe tu comentario..."
+
+#: games/forms.py:33
+msgid "Alias"
+msgstr "Alias"
+
+#: games/forms.py:40
+msgid "Font Type"
+msgstr "Tipo de fuente"
+
+#: games/forms.py:41
+msgid "Tiny"
+msgstr "Enano"
+
+#: games/forms.py:41
+msgid "Small"
+msgstr "Pequeño"
+
+#: games/forms.py:41
+msgid "Medium"
+msgstr "Mediano"
+
+#: games/forms.py:42
+msgid "Big"
+msgstr "Grande"
+
+#: games/forms.py:42
+msgid "Gigantic"
+msgstr "Gigante"
+
+#: games/forms.py:42
+msgid "Font Size"
+msgstr "Tamaño de fuente"
+
+#: games/forms.py:49
+msgid "Access Password"
+msgstr "Contraseña de acceso"
+
+#: games/game_views.py:41
+#, python-format
+msgid "%(count)d games found with selected filters!!!"
+msgstr "%(count)d juegos encontrados con los filtros seleccionados!!!"
+
+#: games/game_views.py:43
+msgid "No games match the selected filters!!!"
+msgstr "No hay juegos que coincidan con los filtros seleccionados!!!"
+
+#: games/game_views.py:69 games/game_views.py:131 games/user_views.py:90
+#: games/user_views.py:129
+msgid "Login required to access this page!!!"
+msgstr "Logueo requerido para acceder a esta página!!!"
+
+#: games/game_views.py:228 games/game_views.py:286
+msgid "Please provide a rating and/or a comment!"
+msgstr "Porfavor, de valoración y/o un comentario!"
+
+#: games/game_views.py:247
+msgid "Your rating has been updated!!!"
+msgstr "Su valoración ha sido actualizada!!!"
+
+#: games/game_views.py:264 games/game_views.py:279
+#: games/templates/games/base.html:55
+msgid "Anonymous"
+msgstr "Ánonimo"
+
+#: games/game_views.py:269
+msgid "Your rating has been saved!!!"
+msgstr "Su valoración ha sido guardada!!!"
+
+#: games/game_views.py:283
+msgid "Your comment has been saved!!!"
+msgstr "Su comentario ha sido guardado!!!"
+
+#: games/game_views.py:404
+msgid "Login required to like a comment!!!"
+msgstr "Logueo requerido para darle Me gusta a un comentario!!!"
+
+#: games/game_views.py:453
+msgid "Like"
+msgstr "Me gusta"
+
+#: games/game_views.py:453
+msgid "Dislike"
+msgstr "No Me gusta"
+
+#: games/templates/games/404error.html:5
+msgid "Not Found"
+msgstr "No Encontrado"
+
+#: games/templates/games/404error.html:25
+msgid "Oops, page not found :("
+msgstr "Vaya, página NO encontrada :("
+
+#: games/templates/games/base.html:53
+msgid "Logged in as"
+msgstr "Logueado como"
+
+#: games/templates/games/base.html:62
+msgid "Platform"
+msgstr "Plataforma"
+
+#: games/templates/games/base.html:71
+msgid "Genre"
+msgstr "Género"
+
+#: games/templates/games/base.html:80
+msgid "Publisher"
+msgstr "Publicador"
+
+#: games/templates/games/base.html:88
+msgid "Filter games"
+msgstr "Filtrar juegos"
+
+#: games/templates/games/base.html:112 games/templates/games/main.html:4
+msgid "Home"
+msgstr "Inicio"
+
+#: games/templates/games/base.html:124 games/templates/games/help.html:32
+#: games/templates/games/login.html:5 games/templates/games/login.html:42
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: games/templates/games/base.html:132 games/templates/games/help.html:34
+#: games/templates/games/rated_games.html:5
+msgid "Rated Games"
+msgstr "Juegos puntuados"
+
+#: games/templates/games/base.html:137
+#: games/templates/games/followed_games.html:5
+#: games/templates/games/help.html:35
+msgid "Followed Games"
+msgstr "Juegos seguidos"
+
+#: games/templates/games/base.html:142 games/templates/games/help.html:36
+#: games/templates/games/profile.html:39
+#: games/templates/games/user_settings.html:5
+msgid "Settings"
+msgstr "Configuración"
+
+#: games/templates/games/base.html:148 games/templates/games/help.html:6
+msgid "Help"
+msgstr "Ayuda"
+
+#: games/templates/games/base.html:153
+msgid "Admin"
+msgstr "Admin"
+
+#: games/templates/games/base.html:156
+msgid "Previous Page"
+msgstr "Página anterior"
+
+#: games/templates/games/base.html:172
+msgid "Games:"
+msgstr "Juegos:"
+
+#: games/templates/games/base.html:173
+msgid "Total Comments:"
+msgstr "Comentarios totales:"
+
+#: games/templates/games/base.html:175
+msgid "User Rated Games:"
+msgstr "Juegos puntuados por el usuario:"
+
+#: games/templates/games/base.html:176
+msgid "User Comments:"
+msgstr "Comentarios del usuario:"
+
+#: games/templates/games/base.html:179
+msgid "GameRank developed by <strong>Noel Rodríguez Pérez</strong> in May 2025"
+msgstr ""
+"GameRank desarrollado por <strong>Noel Rodríguez Pérez</strong> en mayo de "
+"2025"
+
+#: games/templates/games/comments_section.html:8
+msgid "User:"
+msgstr "Usuario:"
+
+#: games/templates/games/comments_section.html:10
+#: games/templates/games/rated_games.html:46
+msgid "Rating:"
+msgstr "Valoración:"
+
+#: games/templates/games/comments_section.html:10
+#: games/templates/games/followed_games.html:36
+#: games/templates/games/profile.html:24
+#: games/templates/games/rated_games.html:30
+#: games/templates/games/rated_games.html:46
+msgid "stars"
+msgstr "estrellas"
+
+#: games/templates/games/comments_section.html:31
+msgid "No comments yet. Be the first to comment!"
+msgstr "No hay comentarios. Se el primero en comentar!"
+
+#: games/templates/games/details.html:5
+msgid "Game Details"
+msgstr "Detalles del juego"
+
+#: games/templates/games/details.html:19
+#: games/templates/games/followed_games.html:35
+#: games/templates/games/main.html:42 games/templates/games/rated_games.html:29
+msgid "Platform:"
+msgstr "Plataforma:"
+
+#: games/templates/games/details.html:19
+#: games/templates/games/followed_games.html:34
+#: games/templates/games/main.html:43 games/templates/games/rated_games.html:28
+msgid "Genre:"
+msgstr "Género:"
+
+#: games/templates/games/details.html:19 games/templates/games/main.html:44
+msgid "Developer:"
+msgstr "Desarrollador:"
+
+#: games/templates/games/details.html:28
+msgid "View in"
+msgstr "Ver en"
+
+#: games/templates/games/details.html:29
+msgid "Play Now"
+msgstr "Juega ahora"
+
+#: games/templates/games/details.html:37
+msgid "Unfollow Game"
+msgstr "Dejar de seguir"
+
+#: games/templates/games/details.html:42
+msgid "Follow Game"
+msgstr "Seguir"
+
+#: games/templates/games/details.html:49
+msgid "Launch date:"
+msgstr "Fecha de lanzamiento:"
+
+#: games/templates/games/details.html:51
+#: games/templates/games/followed_games.html:36
+#: games/templates/games/main.html:46 games/templates/games/rated_games.html:30
+msgid "Average rating:"
+msgstr "Valoración media:"
+
+#: games/templates/games/details.html:53
+#, python-format
+msgid ""
+"\n"
+"                        %(rating)s (%(votes)s votes)\n"
+"                    "
+msgstr ""
+"\n"
+"                                    %(rating)s (%(votes)s valoranciones)\n"
+"                                "
+
+#: games/templates/games/details.html:57
+msgid "Description:"
+msgstr "Descripción:"
+
+#: games/templates/games/details.html:63
+msgid "View as JSON"
+msgstr "Ver como JSON"
+
+#: games/templates/games/details.html:66
+msgid "View as XML"
+msgstr "Ver como XML"
+
+#: games/templates/games/details.html:81
+msgid "Comments:"
+msgstr "Comentarios:"
+
+#: games/templates/games/details.html:84
+msgid "Disable dynamic comments with HTMX"
+msgstr "Desactivar comentarios dinámicos con HTMX"
+
+#: games/templates/games/details.html:86
+msgid "Enable dynamic comments with HTMX"
+msgstr "Activar comentarios dinámicos con HTMX"
+
+#: games/templates/games/details.html:125
+msgid "Rate and/or Comment:"
+msgstr "Valorar y/o comentar:"
+
+#: games/templates/games/details.html:129
+msgid "Submit Rating and/or Comment"
+msgstr "Enviar valoración y/o comentario"
+
+#: games/templates/games/follow.html:5
+msgid "Successful action"
+msgstr "Acción exitosa"
+
+#: games/templates/games/follow.html:21
+msgid "You are now following the game:"
+msgstr "Has empezado a seguir el juego:"
+
+#: games/templates/games/follow.html:24
+msgid "You have stopped following the game:"
+msgstr "Has dejado de seguir el juego:"
+
+#: games/templates/games/follow.html:27
+msgid "Action processed successfully!!!"
+msgstr "Acción procesada con éxito!!!"
+
+#: games/templates/games/follow.html:33
+msgid "Now you will be receiving updates related to this game"
+msgstr "Ahora estarás recibiendo actualizaciones relacionadas con este juego"
+
+#: games/templates/games/follow.html:35
+msgid "You will not receive any update more related to this game"
+msgstr "NO recibirás ninguna actualización más relacionada con este juego"
+
+#: games/templates/games/followed_games.html:18
+msgid "Games Followed by"
+msgstr "Juegos seguidos por"
+
+#: games/templates/games/followed_games.html:41
+#: games/templates/games/main.html:71
+msgid "View Details"
+msgstr "Ver Detalles"
+
+#: games/templates/games/followed_games.html:42
+#: games/templates/games/main.html:56 games/templates/games/rated_games.html:36
+msgid "Unfollow"
+msgstr "Dejar de seguir"
+
+#: games/templates/games/followed_games.html:47
+msgid "No games followed yet!!!"
+msgstr "No sigues ningún juego aún!!!"
+
+#: games/templates/games/global_login.html:5
+msgid "Global Login"
+msgstr "Logueo Global"
+
+#: games/templates/games/global_login.html:16
+msgid "Global Access to GameRank"
+msgstr "Acceso Global a GameRank"
+
+#: games/templates/games/global_login.html:27
+msgid "Access"
+msgstr "Acceder"
+
+#: games/templates/games/help.html:16
+msgid "GameRank Help Page"
+msgstr "Página de ayuda de GameRank"
+
+#: games/templates/games/help.html:18
+msgid ""
+"This platform allows you to explore, rate, comment and follow videogames "
+"from different topics and sources."
+msgstr ""
+"Esta plataforma te permite explorar, valorar, comentar y seguir videojuegos "
+"de diferentes temáticas y plataformas."
+
+#: games/templates/games/help.html:20
+msgid "Main Features"
+msgstr "Características principales"
+
+#: games/templates/games/help.html:22
+msgid "Home Page:"
+msgstr "Página de inicio:"
+
+#: games/templates/games/help.html:22
+msgid ""
+"Browse top-rated games. Paginated view, sorted by decreasing average rating. "
+"Where it is posible to filter by some characteristics."
+msgstr ""
+"Explorar juegos puntuados. Vista paginada, ordenada por valoración media "
+"descendente. Donde es posible filtrar por algunas características."
+
+#: games/templates/games/help.html:23
+msgid "Login/Register:"
+msgstr "Logueo/Registro:"
+
+#: games/templates/games/help.html:23
+msgid ""
+"Create an account and get logged in to access all functionalities. Need to "
+"pass the global Login policy!!"
+msgstr ""
+"Crear una cuenta y loguearse para acceder a todas las funcionalidades. "
+"Necesita pasar la política de logueo global!!"
+
+#: games/templates/games/help.html:24
+#, fuzzy
+#| msgid "Game Details"
+msgid "Game Detail:"
+msgstr "Detalles del juego"
+
+#: games/templates/games/help.html:24
+msgid ""
+"View game info, do your vote (0-5), and leave comments. You can also like/"
+"dislike comments and edit your rating."
+msgstr ""
+"Ver información del juego, hacer tu valoración (0-5) y dejar comentarios. "
+"Puedes también dar me gusta/no me gusta y editar tu valoración."
+
+#: games/templates/games/help.html:25
+msgid "User Profile:"
+msgstr "Perfil de usuario:"
+
+#: games/templates/games/help.html:25
+msgid ""
+"Check your rated and followed games, your average rating, and your account "
+"settings. You can also get logged out here."
+msgstr ""
+"Ver tus juegos puntuados y seguidos, tu valoración media y tus "
+"configuraciones de cuenta. Puedes cerrar sesión aquí."
+
+#: games/templates/games/help.html:26
+msgid "User Settings:"
+msgstr "Configuración de Usuario:"
+
+#: games/templates/games/help.html:26
+msgid ""
+"Customize font type and size, even your alias account name for a better "
+"reading experience."
+msgstr ""
+"Personalizar el tipo y tamaño de fuente, incluso tu nombre de cuenta "
+"personalizado para una mejor experiencia de lectura."
+
+#: games/templates/games/help.html:29
+msgid "Navigation"
+msgstr "Navegación"
+
+#: games/templates/games/help.html:31
+msgid "Main"
+msgstr "Inicio"
+
+#: games/templates/games/help.html:31
+msgid "Homepage of GameRank."
+msgstr "Página de inicio de a GameRank"
+
+#: games/templates/games/help.html:32
+msgid "Start/Create a session."
+msgstr "Iniciar/Crear una sesión."
+
+#: games/templates/games/help.html:33
+msgid "Profile"
+msgstr "Perfil"
+
+#: games/templates/games/help.html:33
+msgid "Your activity summary and logout."
+msgstr "Su resumen de actividad y cierre de sesión."
+
+#: games/templates/games/help.html:34
+msgid "All games you've voted on."
+msgstr "Todos los juegos en los que has votado."
+
+#: games/templates/games/help.html:35
+msgid "Games you're tracking."
+msgstr "Juegos que sigues."
+
+#: games/templates/games/help.html:36
+msgid "Personalize the interface and username."
+msgstr "Personalizar la interfaz y el nombre de usuario."
+
+#: games/templates/games/help.html:39
+msgid "About the Project"
+msgstr "Sobre el proyecto"
+
+#: games/templates/games/help.html:40
+msgid ""
+"This application was developed as part of the final project for the course "
+"\"Servicios y Aplicaciones Telemáticas\"."
+msgstr ""
+"Esta aplicación fue desarrollada como parte del proyecto final para la "
+"asignatura de \"Servicios y Aplicaciones Telemáticas\"."
+
+#: games/templates/games/help.html:41
+msgid ""
+"SAT 2024-2025 subject of Telecommunication Technologies Engineering degree "
+"in URJC."
+msgstr ""
+"SAT 2024-2025 asignatura de la carrera de Ingeniería en Tecnologías de "
+"Telecomunicaciones en la URJC."
+
+#: games/templates/games/help.html:42
+msgid "Author Credits:"
+msgstr "Créditos del autor:"
+
+#: games/templates/games/login.html:19
+msgid "GAMERANK LOGIN"
+msgstr "LOGUEO DE GAMERANK"
+
+#: games/templates/games/login.html:35
+msgid "Username:"
+msgstr "Nombre de usuario:"
+
+#: games/templates/games/login.html:39
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: games/templates/games/login.html:47
+msgid "Don't have an account?"
+msgstr "No tienes cuenta?"
+
+#: games/templates/games/login.html:47
+msgid "Sign up here"
+msgstr "Registrate aquí"
+
+#: games/templates/games/main.html:20
+msgid "Welcome to GameRank"
+msgstr "Bienvenido a GameRank"
+
+#: games/templates/games/main.html:47
+#, python-format
+msgid ""
+"\n"
+"                                    %(rating)s (%(votes)s votes)\n"
+"                                "
+msgstr ""
+"\n"
+"                                    %(rating)s (%(votes)s valoranciones)\n"
+"                                "
+
+#: games/templates/games/main.html:61 games/templates/games/rated_games.html:38
+msgid "Follow"
+msgstr "Seguir"
+
+#: games/templates/games/main.html:66
+msgid "Log in to follow this game"
+msgstr "Loguearse para seguir este juego"
+
+#: games/templates/games/pages_buttons.html:33
+#, python-format
+msgid ""
+"\n"
+"                Page %(page)s of %(num_pages)s"
+msgstr ""
+"\n"
+"                Página %(page)s de %(num_pages)s"
+
+#: games/templates/games/profile.html:18
+msgid "Profile of"
+msgstr "Perfil de"
+
+#: games/templates/games/profile.html:23
+msgid "Number of rates done:"
+msgstr "Número de valoraciones realizadas:"
+
+#: games/templates/games/profile.html:24
+msgid "Average rating of the user:"
+msgstr "Valoración media del usuario:"
+
+#: games/templates/games/profile.html:29
+msgid "Rated games"
+msgstr "Juegos puntuados"
+
+#: games/templates/games/profile.html:34
+msgid "Followed games"
+msgstr "Juegos seguidos"
+
+#: games/templates/games/profile.html:44
+msgid "LOGOUT"
+msgstr "CERRAR SESIÓN"
+
+#: games/templates/games/rated_games.html:18
+msgid "Rated Games by"
+msgstr "Juegos puntuados por"
+
+#: games/templates/games/rated_games.html:60
+msgid "Any rating has been done yet!!"
+msgstr "No se han realizado valoraciones todavía!!!"
+
+#: games/templates/games/register.html:5
+msgid "Registration"
+msgstr "Registro"
+
+#: games/templates/games/register.html:18
+msgid "GAMERANK REGISTRATION"
+msgstr "REGISTRO DE GAMERANK"
+
+#: games/templates/games/register.html:40
+msgid "Confirm Password:"
+msgstr "Confirmar Contraseña:"
+
+#: games/templates/games/register.html:47
+msgid "Register"
+msgstr "Registrar"
+
+#: games/templates/games/register.html:53
+msgid "Already signed up?"
+msgstr "Estás ya registrado?"
+
+#: games/templates/games/register.html:53
+msgid "Login here"
+msgstr "Iniciar sesión aquí"
+
+#: games/templates/games/user_settings.html:17
+msgid "User Settings"
+msgstr "Configuración de Usuario"
+
+#: games/templates/games/user_settings.html:34
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#: games/user_views.py:41
+msgid "Invalid password"
+msgstr "Contraseña incorrecta"
+
+#: games/user_views.py:74
+msgid "Invalid username or password!!!"
+msgstr "Usuario o contraseña inválido/s!!!"
+
+#: games/user_views.py:156
+msgid "Settings updated successfully!"
+msgstr "Configuración actualizada con éxito!!!"
+
+#: games/user_views.py:190
+msgid "Account created successfully! Please log in:"
+msgstr "Cuenta creada con éxito!!! Porfavor, inicie sesión:"

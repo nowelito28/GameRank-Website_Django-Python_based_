@@ -1,0 +1,68 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Rated Games" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/games.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="rated-container">
+    <div class="rated-card">
+        <!-- Encabezado -->
+        <div class="rated-card-header">
+            {% trans "Rated Games by" %} {{ user.username }}
+        </div>
+
+        <ul class="list-group">
+            {% for rated_game in rated_games %}
+                <li class="list-group-item rated-game-item">
+                    <img src="{{ rated_game.game.thumbnail }}" class="card-img-top" />
+
+                    <div class="rated-game-item-info">
+                        <h3>{{ rated_game.game.title }}</h3>
+                        <p><strong>{% trans "Genre:" %}</strong> {{ rated_game.game.genre }} |
+                           <strong>{% trans "Platform:" %}</strong> {{ rated_game.game.platform }} |
+                           <strong>{% trans "Average rating:" %}</strong> {{ rated_game.game.average_rating }} {% trans "stars" %}</p>
+
+                        <!-- Botones para seguir y dejar de seguir el juego (ver si está en followed_games), y ver detalles -->
+                        <div class="rated-btn-group">
+                            <a href="{% url 'game_detail' rated_game.game.id %}" class="btn btn-info rated-btn full-btn">View details</a>
+                            {% if rated_game.game.id in followed_games %}
+                                <a href="{% url 'unfollow_game' rated_game.game.id %}" class="btn btn-danger rated-btn full-btn">{% trans "Unfollow" %}</a>
+                            {% else %}
+                                <a href="{% url 'follow_game' rated_game.game.id %}" class="btn btn-success rated-btn full-btn">{% trans "Follow" %}</a>
+                            {% endif %}
+                        </div>
+
+                        <!-- Mostrar valoraciones -->
+                        {% for comment in rated_game.comments %}
+                            <div class="rated-comment">
+                                {% if comment.rating is not None %}
+                                    <p class="rating">{% trans "Rating:" %} {{ comment.rating }} {% trans "stars" %}</p>
+                                {% endif %}
+                                <p class="text">{{ comment.text }}</p>
+                                <p class="date">{{ comment.timestamp|date:"d M Y H:i" }}</p>
+                            </div>
+                        {% endfor %}
+
+                        <!-- Paginación -> Botones de navegación de comentarios: page_{game_id} -->
+                        {% with "page_"|add:rated_game.game.id|stringformat:"s" as page_param %}
+                            {% include "games/pages_buttons.html" with page_obj=rated_game.comments page_param=page_param %}
+                        {% endwith %}
+                    </div>
+                </li>
+            {% empty %}
+                <p style="text-align: center;">{% trans "Any rating has been done yet!!" %}</p>
+            {% endfor %}
+        </ul>
+
+        <!-- Paginación -> Botones de navegación -->
+        {% include "games/pages_buttons.html" with page_obj=rated_games page_param="page" %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<form
+    method="POST"
+    hx-post="{% url 'like' comment.id %}?like_type={{ option }}"
+    hx-target="#like-buttons-{{ comment.id }}"
+    hx-swap="outerHTML"
+    style="display:inline;">
+    {% csrf_token %}
+    <input type="hidden" name="game_id" value="{{ comment.game.id }}">
+    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+    <input type="hidden" name="like_type" value="{{ option }}">
+    <button type="submit"
+            class="btn btn-sm {{ active_class }} mx-1">
+        {{ label }} {{ count }}
+    </button>
+</form>

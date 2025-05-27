@@ -1,0 +1,52 @@
+{% extends "games/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/profile.png' %}" type="image/png">
+    <!-- Estilos específicos de la página de login -->
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card login-card">
+        <!-- Cabecera -->
+        <div class="card-header">
+            {% trans "GAMERANK LOGIN" %}
+        </div>
+
+        <!-- Mensajes de info (si los hay) -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} mt-3 mx-3" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Formulario de login -->
+        <form method="POST" class="text-center">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">{% trans "Username:" %}</label><br>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="id_password">{% trans "Password:" %}</label><br>
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-custom">{% trans "Login" %}</button>
+        </form>
+
+        <!-- Enlace a registro -->
+        <div class="back-to-register">
+            <p>{% trans "Don't have an account?" %} <a href="{% url 'register' %}">{% trans "Sign up here" %}</a></p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

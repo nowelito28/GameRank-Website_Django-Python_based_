@@ -1,0 +1,81 @@
+{% extends 'games/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/ico">
+    <link rel="stylesheet" href="{% static 'css/games.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Fondo animado -->
+    <div class="background-animation"></div>
+
+    <div class="container mt-5">
+        <!-- Sección de bienvenida con fondo -->
+        <div class="title-section text-center mb-5">
+            <h1 class="display-4">{% trans "Welcome to GameRank" %}</h1>
+        </div>
+
+        <!-- Mensaje info de filtrado -->
+        {% if messages %}
+            <div class="mt-4">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} shadow-sm text-center" role="alert" style="font-weight: 500; font-size: 1.1em;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Fila de juegos -->
+        <div class="row" id="games-list">
+            {% for game in games %}
+                <div class="col-md-4 mb-4">
+                    <div class="card game-card h-100">
+                        <img src="{{ game.thumbnail }}" class="card-img-top" alt="{{ game.title }}" />
+                        <div class="card-body d-flex flex-column">
+                            <p class="card-title">{{ game.title }}</p>
+                            <p class="card-text"><strong>{% trans "Platform:" %}</strong> {{ game.platform }}</p>
+                            <p class="card-text"><strong>{% trans "Genre:" %}</strong> {{ game.genre }}</p>
+                            <p class="card-text"><strong>{% trans "Developer:" %}</strong> {{ game.developer }}</p>
+                            <p class="card-text">
+                                <strong>{% trans "Average rating:" %}</strong>
+                                {% blocktrans with rating=game.average_rating votes=game.vote_count %}
+                                    {{ rating }} ({{ votes }} votes)
+                                {% endblocktrans %}
+                            </p>
+
+                            {% if user.is_authenticated %}
+                                {% if game.is_following %}
+                                    <form method="POST" action="{% url 'unfollow_game' game.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger btn-block btn-follow">{% trans "Unfollow" %}</button>
+                                    </form>
+                                {% else %}
+                                    <form method="POST" action="{% url 'follow_game' game.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success btn-block btn-follow">{% trans "Follow" %}</button>
+                                    </form>
+                                {% endif %}
+                            {% else %}
+                                <p class="card-text text-center">
+                                    <a href="{% url 'login' %}" class="btn btn-primary">{% trans "Log in to follow this game" %}</a>
+                                </p>
+                            {% endif %}
+
+                            <p class="text-center mt-3">
+                                <a href="{% url 'game_detail' game.id %}" class="btn btn-info btn-block">{% trans "View Details" %}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Paginación -> Botones de navegación -->
+        {% include "games/pages_buttons.html" with page_obj=games page_param="page" query_string=query_string %}    </div>
+{% endblock %}

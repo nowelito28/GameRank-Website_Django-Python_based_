@@ -1,0 +1,36 @@
+<!-- Mostrar comentarios -->
+<!-- Internalización del template -->
+{% load i18n %}
+<div class="comments-section" id="comments-section">
+    {% for comment in comments %}
+        <div class="card comment-card text-center">
+            <div class="card-body">
+                <p><strong>{% trans "User:" %} {{ comment.user }}</strong></p>
+                {% if comment.rating is not None %}
+                    <p><strong>{% trans "Rating:" %}</strong> {{ comment.rating }} {% trans "stars" %}</p>
+                {% endif %}
+                <p>{{ comment.text }}</p>
+                <small>{{ comment.timestamp|date:"d M Y H:i" }}</small>
+
+                {% if user.is_authenticated %}
+                    <!-- Contenedor de los botones de like (solo para usuarios logueados) -->
+                    <div class="like-controls mt-3" style="display: flex; justify-content: center;">
+                        <div
+                            hx-get="{% url 'like' comment.id %}"
+                            hx-target="#like-buttons-{{ comment.id }}"
+                            hx-trigger="load"
+                            hx-swap="innerHTML">
+                        </div>
+                        <div id="like-buttons-{{ comment.id }}"></div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    {% empty %}
+        <p style="text-align: center;">{% trans "No comments yet. Be the first to comment!" %}</p>
+    {% endfor %}
+
+    <!-- Paginación -> Botones de navegación -->
+    {% include "games/pages_buttons.html" with page_obj=comments page_param="page" %}
+</div>

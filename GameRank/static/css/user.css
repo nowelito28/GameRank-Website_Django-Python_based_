@@ -1,0 +1,424 @@
+body {
+    background-image: url("../images/settings.jpg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.login-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background-color: #ffffff;
+    margin: 40px auto;
+}
+
+.login-card .card-header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+.login-card input {
+    display: block;
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 8px;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.btn-custom {
+    background-color: #2980b9;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-custom:hover {
+    background-color: #3498db;
+    opacity: 0.9;
+}
+
+.back-to-register {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-to-register a {
+    text-decoration: none;
+    color: #2980b9;
+    font-size: 1em;
+}
+
+.back-to-register a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+/**/
+
+.profile-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.profile-card .card-header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.profile-card .form-group {
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+    opacity: 0.9;
+}
+
+.btn {
+    font-size: 1em;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-settings {
+    background-color: #5e5b5b;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-settings:hover {
+    background-color: #7c7b7b;
+    opacity: 0.9;
+}
+
+.btn-blue {
+    background-color: #2980b9;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-blue:hover {
+    background-color: #3498db;
+    opacity: 0.9;
+}
+
+.btn-blue-dark {
+    background-color: #1f4e79;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-blue-dark:hover {
+    background-color: #163d60;
+    color: #030303;
+    opacity: 0.9;
+}
+
+/**/
+
+.global-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.global-card h3 {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.global-form {
+    width: 100%;
+}
+
+.global-form input[type="text"],
+.global-form input[type="password"] {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.global-form button {
+    background-color: #2980b9;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.global-form button:hover {
+    background-color: #3498db;
+    opacity: 0.95;
+}
+
+/**/
+
+.settings-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.settings-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.settings-card .card-header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.settings-card .form-group label {
+    font-weight: bold;
+}
+
+.settings-form {
+    text-align: center;
+}
+
+.settings-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.settings-btn-primary {
+    background-color: #2980b9;
+    color: white;
+}
+
+.settings-btn-primary:hover {
+    background-color: #3498db;
+    opacity: 0.9;
+}
+
+/**/
+
+.register-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #ffffff;
+    margin: 40px auto;
+}
+
+.register-card .card-header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.register-card input {
+    display: block;
+    margin: 0 auto 15px auto;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.btn-custom {
+    background-color: #2980b9;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #3498db;
+    opacity: 0.9;
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back-to-login a {
+    text-decoration: none;
+    color: #2980b9;
+    font-size: 1em;
+}
+
+.back-to-login a:hover {
+    text-decoration: underline;
+}
+
+/**/
+
+.follow-container {
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 100px;
+}
+
+.card-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.game-title {
+    color: black;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+.follow-container {
+    padding: 5%;
+    background-color: #f8f9fa;
+}
+
+.card-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+.btn-group-follow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.follow-success {
+    background-color: rgba(200, 255, 200, 0.9);
+    border-left: 8px solid #27ae60;
+}
+
+.follow-danger {
+    background-color: rgba(255, 200, 200, 0.9);
+    border-left: 8px solid #c0392b;
+}
+
+.follow-success .card-header {
+    color: #27ae60;
+}
+
+.follow-danger .card-header {
+    color: #c0392b;
+}

@@ -1,0 +1,44 @@
+{% extends 'games/base.html' %}
+{% load static %}
+<!-- Internalización del template -->
+{% load i18n %}
+
+{% block title %}{% trans "Help" %}{% endblock %}
+
+{% block head %}
+    <!-- Añadir favicon -->
+    <link rel="icon" href="{% static 'images/lupa.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/utils.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-5 help-container">
+    <h1 class="mb-4" style="text-align: center;">{% trans "GameRank Help Page" %}</h1>
+
+    <p>{% blocktrans %}This platform allows you to explore, rate, comment and follow videogames from different topics and sources.{% endblocktrans %}</p>
+
+    <h3>🕹️ {% trans "Main Features" %}</h3>
+    <ul>
+        <li><strong>{% trans "Home Page:" %}</strong> {% blocktrans %}Browse top-rated games. Paginated view, sorted by decreasing average rating. Where it is posible to filter by some characteristics.{% endblocktrans %}</li>
+        <li><strong>{% trans "Login/Register:" %}</strong> {% blocktrans %}Create an account and get logged in to access all functionalities. Need to pass the global Login policy!!{% endblocktrans %}</li>
+        <li><strong>{% trans "Game Detail:" %}</strong> {% blocktrans %}View game info, do your vote (0-5), and leave comments. You can also like/dislike comments and edit your rating.{% endblocktrans %}</li>
+        <li><strong>{% trans "User Profile:" %}</strong> {% blocktrans %}Check your rated and followed games, your average rating, and your account settings. You can also get logged out here.{% endblocktrans %}</li>
+        <li><strong>{% trans "User Settings:" %}</strong> {% blocktrans %}Customize font type and size, even your alias account name for a better reading experience.{% endblocktrans %}</li>
+    </ul>
+
+    <h3>🔍 {% trans "Navigation" %}</h3>
+    <ul>
+        <li><strong><a href="{% url 'main' %}">{% trans "Main" %}</a></strong> – {% blocktrans %}Homepage of GameRank.{% endblocktrans %}</li>
+        <li><strong><a href="{% url 'login' %}">{% trans "Login" %}</a></strong> – {% blocktrans %}Start/Create a session.{% endblocktrans %}</li>
+        <li><strong><a href="{% url 'user_profile' %}">{% trans "Profile" %}</a></strong> – {% blocktrans %}Your activity summary and logout.{% endblocktrans %}</li>
+        <li><strong><a href="{% url 'rated_games' %}">{% trans "Rated Games" %}</a></strong> – {% blocktrans %}All games you've voted on.{% endblocktrans %}</li>
+        <li><strong><a href="{% url 'followed_games' %}">{% trans "Followed Games" %}</a></strong> – {% blocktrans %}Games you're tracking.{% endblocktrans %}</li>
+        <li><strong><a href="{% url 'user_settings' %}">{% trans "Settings" %}</a></strong> – {% blocktrans %}Personalize the interface and username.{% endblocktrans %}</li>
+    </ul>
+
+    <h3>👨‍💻 {% trans "About the Project" %}</h3>
+    <p>{% blocktrans %}This application was developed as part of the final project for the course "Servicios y Aplicaciones Telemáticas".{% endblocktrans %}</p>
+    <p>{% blocktrans %}SAT 2024-2025 subject of Telecommunication Technologies Engineering degree in URJC.{% endblocktrans %}</p>
+    <p><strong>{% trans "Author Credits:" %}</strong> Noel Rodríguez Pérez.</p>
+</div>
+{% endblock %}
