@@ -71,7 +71,7 @@ Bachelor’s Degree in Telecommunications Engineering
 - pip
 - Virtual environment (recommended)
 
-### 🔧 Installation
+### 🔧 Installation (Linux/MacOs)
 
 ```bash
 # Clone the repository
