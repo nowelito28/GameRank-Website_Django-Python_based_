@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$2l*th=bzx%0b*j03q#fupz-q*fo)kk+zcj5rwi_u#nj-u3fn@
 DEBUG = True
 
 # Servidores/direcciones/dominios permitidos para despligue web:
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'noelito.pythonanywhere.com']
+ALLOWED_HOSTS = ['noelito.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
