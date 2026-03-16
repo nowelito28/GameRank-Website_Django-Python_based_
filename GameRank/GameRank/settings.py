@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-$2l*th=bzx%0b*j03q#fupz-q*fo)kk+zcj5rwi_u#nj-u3fn@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Servidores/direcciones/dominios permitidos para despligue web:
-ALLOWED_HOSTS = ['noelito.pythonanywhere.com', 'localhost', '127.0.0.1']
+# Servidores/direcciones/dominios permitidos para despligue web -> en producción, se debe configurar con el dominio real del sitio web (ej: 'www.mysite.com') o con la IP del servidor:
+ALLOWED_HOSTS = ['noelito.pythonanywhere.com', 'gamerank.127.0.0.1.nip.io', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition

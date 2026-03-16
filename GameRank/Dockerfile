@@ -12,5 +12,5 @@ RUN pip install -r requirements.txt \
 # Puerto a exponer
 EXPOSE 8000
 
-# Lanzar la app al final (1 solo) (ó ENTRYPOINT ["python3", "manage.py", "runserver", "127.0.0.1:8000"])
-CMD ["python3", "manage.py", "runserver", "localhost:8000"]
+# Lanzar la app al final (1 solo) (ó ENTRYPOINT ["python3", "manage.py", "runserver", "0.0.0.0:8000"])
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
