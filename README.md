@@ -195,8 +195,8 @@ If you need to create a new superuser directly inside the running Kubernetes clu
 # First, find the exact name of your running pod
 kubectl get pods -n gamerank-ns
 
-# Then, execute the createsuperuser command inside that pod (replace <pod-name> by the actual pod name with 'kubectl get pods' corresponding output)
-kubectl exec -it <gamerank-deploy-pod-name> -n gamerank-ns -- python manage.py createsuperuser
+# Then, execute the createsuperuser command inside that pod (replace <pod-name> by the actual pod running name)
+kubectl exec -it <pod-name> -n gamerank-ns -- python manage.py createsuperuser
 ```
 
 *(Note: Because SQLite is being used inside the container without a Persistent Volume, any changes made to the database, including new users, will be lost if the pod restarts).*
