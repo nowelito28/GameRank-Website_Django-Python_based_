@@ -43,7 +43,7 @@ The project is deployed and available at:
 🗓️ Valid until August 2025  
 🔐 Default credentials (for demo purposes):
 
-### 🔐 Users Credentials:
+### 🔐 Users Credentials
 
 - **Admin Panel**: `noelito / 123`  
 - **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
@@ -98,17 +98,19 @@ python3 manage.py createsuperuser
 
 # Run the development server
 python3 manage.py runserver
+```
 
 ## 🐳 Deployment (Docker & Kubernetes / Minikube)
 
-You can also run GameRank locally in a containerized Kubernetes cluster using **Minikube** and the official Docker image. 
+You can also run GameRank locally in a containerized Kubernetes cluster using **Minikube** and the official Docker image.
 
 ### 📋 Prerequisites
+
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or any container runtime)
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-### 🔐 Users Credentials:
+### 🔐 Users Credentials
 
 - **Admin Panel**: `noelito / 123`  
 - **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
