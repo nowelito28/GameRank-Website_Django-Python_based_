@@ -43,8 +43,10 @@ The project is deployed and available at:
 🗓️ Valid until August 2025  
 🔐 Default credentials (for demo purposes):
 
+### 🔐 Users Credentials:
+
 - **Admin Panel**: `noelito / 123`  
-- **Regular Users**: `lucia / lucialucia12`, `gonza / gonzagonza14`
+- **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
 
 ---
 
@@ -105,6 +107,11 @@ You can also run GameRank locally in a containerized Kubernetes cluster using **
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or any container runtime)
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
+
+### 🔐 Users Credentials:
+
+- **Admin Panel**: `noelito / 123`  
+- **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
 
 ### 🛠️ Cluster Setup & Execution
 
@@ -178,5 +185,18 @@ minikube tunnel
 👉 **[http://gamerank.127.0.0.1.nip.io](http://gamerank.127.0.0.1.nip.io)**
 
 *(Note: The Django `settings.py` is already configured to accept this `nip.io` host in the `ALLOWED_HOSTS` array in the `1.0.4` Docker image).*
+
+**8. Create a Superuser in Kubernetes (Optional):**
+If you need to create a new superuser directly inside the running Kubernetes cluster, you can execute Django commands inside the pod:
+
+```bash
+# First, find the exact name of your running pod
+kubectl get pods -n gamerank-ns
+
+# Then, execute the createsuperuser command inside that pod (replace <pod-name> by the actual pod name with 'kubectl get pods' corresponding output)
+kubectl exec -it <gamerank-deploy-pod-name> -n gamerank-ns -- python manage.py createsuperuser
+```
+
+*(Note: Because SQLite is being used inside the container without a Persistent Volume, any changes made to the database, including new users, will be lost if the pod restarts).*
 
 ---
