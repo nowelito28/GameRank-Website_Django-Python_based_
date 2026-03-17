@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Docker Image
         run: |
-          docker build -t nowelito28/gamerank:latest .
+          docker build -t nowelito28/gamerank:latest ./GameRank
       - name: Load Image into Minikube
         run: |
           minikube image load nowelito28/gamerank:latest
