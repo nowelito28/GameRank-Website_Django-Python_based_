@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 jobs:
   deploy-mac:
-    # Exige que el trabajo solo lo coja un entorno local/propio (self-hosted) que sea macOS
-    runs-on: [self-hosted, macOS]
+    # Exigimos SOLO self-hosted. He quitado 'macOS' porque tu Mac no se registró en GitHub con esa etiqueta exacta.
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
