@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 jobs:
   deploy-mac:
-    # Exigimos SOLO self-hosted. He quitado 'macOS' porque tu Mac no se registró en GitHub con esa etiqueta exacta.
-    runs-on: self-hosted
+    # Exige que el trabajo solo lo coja un entorno local/propio (self-hosted) que sea macOS
+    runs-on: [self-hosted, macOS]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -61,7 +61,7 @@ jobs:
           pkill -f "minikube tunnel" || true
 
           echo "El tunnel corre en segundo plano y redirige la salida al fichero tunnel.log"
-          echo "${{ secrets.MAC_PASSWORD }}" | sudo -S nohup minikube tunnel > tunnel.log 2>&1 &
+          echo "${{ secrets.MAC_PASS }}" | sudo -S nohup minikube tunnel > tunnel.log 2>&1 &
 
           echo "Esperar a que el tunnel inicie y asigne la IP"
           sleep 10
