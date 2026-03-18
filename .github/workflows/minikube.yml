@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 jobs:
   deploy-mac:
-    # Exige que el trabajo solo lo coja tu entorno local (omito la etiqueta macOS por si la tuya no la tuviera)
-    runs-on: self-hosted
+    # Exige que el trabajo solo lo coja un entorno local/propio (self-hosted) que sea macOS
+    runs-on: [self-hosted, macOS]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
