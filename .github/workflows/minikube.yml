@@ -2,19 +2,84 @@ name: Deploy to Local Minikube
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
-  deploy:
-    runs-on: self-hosted 
+  deploy-mac:
+    # Exige que el trabajo solo lo coja un entorno local/propio (self-hosted) que sea macOS
+    runs-on: [self-hosted, macOS]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Start Docker and Minikube
+        run: |
+          echo "Verificando que Docker y Minikube estén funcionando en tu Mac..."
+          # Abre la aplicación de Docker Desktop en caso de que esté cerrada
+          open -a Docker
+          
+          echo "Esperando a que Docker esté listo..."
+          while ! docker system info > /dev/null 2>&1; do sleep 2; done
+          
+          echo "Docker listo, arrancando Minikube si no está encendido..."
+          minikube status || minikube start
+      - name: GameRank Namespace
+        run: |
+          echo "Crea el namespace 'gamerank-ns' de forma segura primero haciendo un .yaml en memoria del namespace: apply -> si no existe lo crea, si ya existe no hace nada"
+          kubectl create namespace gamerank-ns --dry-run=client -o yaml | kubectl apply -f -
+
+          echo "Cambia el contexto actual al namespace 'gamerank-ns'"
+          kubectl config set-context --current --namespace=gamerank-ns
       - name: Build Docker Image
         run: |
+          echo "Construye la imagen de docker de la app -> Dockerfile"
           docker build -t nowelito28/gamerank:latest ./GameRank
       - name: Load Image into Minikube
         run: |
+          echo "Carga la imagen de docker en minikube:"
           minikube image load nowelito28/gamerank:latest
+
+          echo "Lista las imagenes de docker en minikube:"
+          minikube image ls
+      - name: Enable Minikube Ingress Addon
+        run: |
+          echo "Habilita el addon ingress de minikube para que el servicio sea accesible desde fuera del cluster(url) mediante el ingress:"
+          minikube addons enable ingress
       - name: Deploy to Minikube
         run: |
-          echo "kubectl apply -f k8s/deployment.yaml"
-          echo "kubectl apply -f k8s/service.yaml"
+          echo "Aplica el deployment de la imagen de docker"
+          kubectl apply -f GameRank/k8s/deployment.yaml
+
+          echo "Aplica el servicio de la imagen de docker"
+          kubectl apply -f GameRank/k8s/service.yaml
+
+          echo "Aplica el ingress de la imagen de docker"
+          kubectl apply -f GameRank/k8s/ingress.yaml
+      - name: Start Minikube Tunnel and Validations
+        run: |
+          echo "Matando túneles antiguos por si acaso..."
+          pkill -f "minikube tunnel" || true
+
+          echo "El tunnel corre en segundo plano y redirige la salida al fichero tunnel.log"
+          echo "${{ secrets.MAC_PASSWORD }}" | sudo -S nohup minikube tunnel > tunnel.log 2>&1 &
+
+          echo "Esperar a que el tunnel inicie y asigne la IP"
+          sleep 10
+
+          echo "Obtener la IP del host"
+          kubectl get nodes -o wide
+
+          echo "Obtener los pods de la imagen de docker"
+          kubectl get pods -n gamerank-ns
+
+          echo "Obtener el deployment de la imagen de docker"
+          kubectl get deployment -n gamerank-ns
+
+          echo "Obtener el servicio de la imagen de docker"
+          kubectl get svc -n gamerank-ns
+
+          echo "Obtener el ingress de la imagen de docker"
+          kubectl get ingress -n gamerank-ns
+
+          echo "Url de la app:"
+          echo "http://$(kubectl get ingress gamerank-ingress -n gamerank-ns -o jsonpath='{.spec.rules[0].host}')"

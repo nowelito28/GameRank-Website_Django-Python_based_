@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gamerank-ingress
+  namespace: gamerank-ns
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: gamerank.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gamerank-service
+                port:
+                  number: 8080 # <-- [PUERTO INTERMEDIO] Apuntamos al 'port' (8080) de tu Service (PUERTO CLUSTER/LOCAL), NO al contenedor. (Desde el navegador accederás a este puerto 8080 sin poner nada (default))

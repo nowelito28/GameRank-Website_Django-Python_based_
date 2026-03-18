@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gamerank-deployment
+  namespace: gamerank-ns
+  labels:
+    app: gamerank
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gamerank
+  template:
+    metadata:
+      labels:
+        app: gamerank
+    spec:
+      containers:
+      - name: gamerank
+        image: nowelito28/gamerank:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000 # <-- [PUERTO DEL CONTENEDOR/DOCKER] Puerto en el que Django escucha dentro del entorno aislado.

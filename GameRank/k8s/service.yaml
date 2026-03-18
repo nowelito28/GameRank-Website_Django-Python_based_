@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gamerank-service
+  namespace: gamerank-ns
+spec:
+  selector:
+    app: gamerank
+  ports:
+    - protocol: TCP
+      port: 8080 # <-- [PUERTO CLUSTER/LOCAL] Puerto por el cual el "balanceador" de Kubernetes es accesible (el Ingress habla a este puerto)
+      targetPort: 8000 # <-- [PUERTO DEL CONTENEDOR/DOCKER] Debe coincidir con el 'containerPort' de tu Deployment / Dockerfile
+  type: ClusterIP
