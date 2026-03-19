@@ -35,8 +35,8 @@ jobs:
           kubectl config set-context --current --namespace=gamerank-ns
       - name: Build Docker Image
         run: |
-          echo "Construye la imagen de docker de la app -> Dockerfile"
-          docker build -t nowelito28/gamerank:latest ./GameRank
+          echo "Construye la imagen de docker de la app -> Dockerfile (path a este fichero al final)"
+          docker build -t nowelito28/gamerank:latest .
       - name: Load Image into Minikube
         run: |
           echo "Carga la imagen de docker en minikube:"
@@ -51,13 +51,13 @@ jobs:
       - name: Deploy to Minikube
         run: |
           echo "Aplica el deployment de la imagen de docker"
-          kubectl apply -f GameRank/k8s/deployment.yaml
+          kubectl apply -f ./k8s/deployment.yaml
 
           echo "Aplica el servicio de la imagen de docker"
-          kubectl apply -f GameRank/k8s/service.yaml
+          kubectl apply -f ./k8s/service.yaml
 
           echo "Aplica el ingress de la imagen de docker"
-          kubectl apply -f GameRank/k8s/ingress.yaml
+          kubectl apply -f ./k8s/ingress.yaml
       - name: Start Minikube Tunnel and Validations
         run: |
           echo "Matando túneles antiguos por si acaso..."
