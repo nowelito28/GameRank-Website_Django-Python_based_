@@ -1,0 +1,137 @@
+[2026-03-19 11:07:49Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'Credentials': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'Runner': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.runner'
+[2026-03-19 11:07:49Z INFO Listener] Runner is built for OSX (Arm64) - osx-arm64.
+[2026-03-19 11:07:49Z INFO Listener] RuntimeInformation: Darwin 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar  5 22:01:37 PST 2026; root:xnu-12377.101.14~18/RELEASE_ARM64_T8103.
+[2026-03-19 11:07:49Z INFO Listener] Version: 2.332.0
+[2026-03-19 11:07:49Z INFO Listener] Commit: a153d802ff96c51ac1b8d72dd8a38ebe830398fc
+[2026-03-19 11:07:49Z INFO Listener] Culture: es-ES
+[2026-03-19 11:07:49Z INFO Listener] UI Culture: es-ES
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO Listener] Validating directory permissions for: '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO CommandLineParser] Parse
+[2026-03-19 11:07:49Z INFO CommandLineParser] Parsing 1 args
+[2026-03-19 11:07:49Z INFO CommandLineParser] parsing argument
+[2026-03-19 11:07:49Z INFO CommandLineParser] HasArgs: False
+[2026-03-19 11:07:49Z INFO CommandLineParser] Adding Command: run
+[2026-03-19 11:07:49Z INFO Listener] Arguments parsed
+[2026-03-19 11:07:49Z INFO Runner] ExecuteCommand
+[2026-03-19 11:07:49Z INFO ConfigurationStore] currentAssemblyLocation: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin/Runner.Listener.dll
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] binPath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] RootFolder: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'Runner': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.runner'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] ConfigFilePath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.runner
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'MigratedRunner': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.runner_migrated'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] MigratedConfigFilePath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.runner_migrated
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'Credentials': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] CredFilePath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_migrated'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] MigratedCredFilePath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_migrated
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'Service': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.service'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.service
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'help': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'version': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'check': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Command 'configure': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Command 'remove': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-03-19 11:07:49Z INFO ConfigurationManager] LoadSettings
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsConfigured()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsConfigured: True
+[2026-03-19 11:07:49Z INFO ConfigurationManager] Is configured: True
+[2026-03-19 11:07:49Z INFO ConfigurationStore] Read setting file: 417 chars
+[2026-03-19 11:07:49Z INFO ConfigurationManager] Settings Loaded
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-03-19 11:07:49Z INFO CommandSettings] Command 'run': 'True'
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsConfigured()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsConfigured: True
+[2026-03-19 11:07:49Z INFO ConfigurationManager] Is configured: True
+[2026-03-19 11:07:49Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-03-19 11:07:49Z INFO Runner] Set runner startup type - Manual
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'once': 'False'
+[2026-03-19 11:07:49Z INFO CommandSettings] Flag 'once': 'False'
+[2026-03-19 11:07:49Z INFO Runner] RunAsync
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Work': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/_work'
+[2026-03-19 11:07:49Z INFO Runner] Validating directory permissions for: '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/_work'
+[2026-03-19 11:07:49Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-03-19 11:07:49Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-03-19 11:07:49Z INFO Runner] Falling back to original .runner settings
+[2026-03-19 11:07:49Z INFO Runner] Using BrokerMessageListener
+[2026-03-19 11:07:49Z INFO BrokerMessageListener] Using provided settings
+[2026-03-19 11:07:49Z INFO BrokerMessageListener] {
+  "AgentId": 2,
+  "AgentName": "gamerank-runner",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus26.actions.githubusercontent.com/nfoVjZ2SEEcEdFuDLkb44ao6WYM3Z2vJ2FVbCxnVyJbq1WllR6/",
+  "GitHubUrl": "https://github.com/nowelito28/GameRank-Website_Django-Python_based_",
+  "WorkFolder": "_work",
+  "UseV2Flow": true,
+  "ServerUrlV2": "https://broker.actions.githubusercontent.com/"
+}
+[2026-03-19 11:07:49Z INFO BrokerMessageListener] Loading Credentials
+[2026-03-19 11:07:49Z INFO ConfigurationStore] HasCredentials()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] stored True
+[2026-03-19 11:07:49Z INFO CredentialManager] GetCredentialProvider
+[2026-03-19 11:07:49Z INFO CredentialManager] Creating type OAuth
+[2026-03-19 11:07:49Z INFO CredentialManager] Creating credential type: OAuth
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Bin': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/bin'
+[2026-03-19 11:07:49Z INFO HostContext] Well known directory 'Root': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner'
+[2026-03-19 11:07:49Z INFO HostContext] Well known config file 'RSACredentials': '/Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_rsaparams'
+[2026-03-19 11:07:49Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_rsaparams
+[2026-03-19 11:07:49Z INFO BrokerMessageListener] Attempt to create session.
+[2026-03-19 11:07:49Z INFO BrokerMessageListener] Connecting to the Broker Server...
+[2026-03-19 11:07:49Z INFO ConfigurationStore] HasCredentials()
+[2026-03-19 11:07:49Z INFO ConfigurationStore] stored True
+[2026-03-19 11:07:49Z INFO CredentialManager] GetCredentialProvider
+[2026-03-19 11:07:49Z INFO CredentialManager] Creating type OAuth
+[2026-03-19 11:07:49Z INFO CredentialManager] Creating credential type: OAuth
+[2026-03-19 11:07:49Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_rsaparams
+[2026-03-19 11:07:50Z INFO BrokerMessageListener] VssConnection created
+[2026-03-19 11:07:50Z INFO BrokerMessageListener] Connecting to the Runner server...
+[2026-03-19 11:07:50Z INFO RunnerServer] EstablishVssConnection
+[2026-03-19 11:07:50Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO RunnerServer] EstablishVssConnection
+[2026-03-19 11:07:50Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO RunnerServer] EstablishVssConnection
+[2026-03-19 11:07:50Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-03-19 11:07:50Z INFO BrokerMessageListener] VssConnection created
+[2026-03-19 11:07:50Z INFO Terminal] WRITE LINE: 
+[2026-03-19 11:07:50Z INFO Terminal] WRITE LINE: 
+[2026-03-19 11:07:50Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_rsaparams
+[2026-03-19 11:07:50Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/noelito/Desktop/EIF3/2Cuatrimestre/SAT/django/GameRank-Website_Django-Python_based_/actions-runner/.credentials_rsaparams
+[2026-03-19 11:07:51Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-03-19 11:07:52Z INFO BrokerMessageListener] Session created.
+[2026-03-19 11:07:52Z INFO Terminal] WRITE LINE: Current runner version: '2.332.0'
+[2026-03-19 11:07:52Z INFO Terminal] WRITE LINE: 2026-03-19 11:07:52Z: Listening for Jobs
+[2026-03-19 11:07:52Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
