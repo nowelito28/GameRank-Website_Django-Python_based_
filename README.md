@@ -3,7 +3,7 @@
 GameRank is a full-stack web application built with Django for exploring, rating, and commenting on videogames. It aggregates data from multiple external sources (XML and public JSON APIs) and allows users to interact with games by posting reviews, voting on comments, and customizing their experience.
 
 > 🌐 **Live demo:** [https://noelito.pythonanywhere.com/](https://noelito.pythonanywhere.com/)  
-> 🕒 *Available until **August 2025***
+> 🕒 \*Available until **August 2025\***
 
 ---
 
@@ -45,7 +45,7 @@ The project is deployed and available at:
 
 ### 🔐 Users Credentials
 
-- **Admin Panel**: `noelito / 123`  
+- **Admin Panel**: `noelito / 123`
 - **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
 
 ---
@@ -112,7 +112,7 @@ You can also run GameRank locally in a containerized Kubernetes cluster using **
 
 ### 🔐 Users Credentials
 
-- **Admin Panel**: `noelito / 123`  
+- **Admin Panel**: `noelito / 123`
 - **Regular Users**: `gonza / gonzagonza14`, `lucia / lucialucia12`
 
 ### 🛠️ Cluster Setup & Execution
@@ -186,7 +186,7 @@ minikube tunnel
 **7. Access the application:** Open your web browser and navigate to:  
 👉 **[http://gamerank.127.0.0.1.nip.io](http://gamerank.127.0.0.1.nip.io)**
 
-*(Note: The Django `settings.py` is already configured to accept this `nip.io` host in the `ALLOWED_HOSTS` array in the `1.0.4` Docker image).*
+_(Note: The Django `settings.py` is already configured to accept this `nip.io` host in the `ALLOWED_HOSTS` array in the `1.0.4` Docker image)._
 
 **8. Create a Superuser in Kubernetes (Optional):**
 If you need to create a new superuser directly inside the running Kubernetes cluster, you can execute Django commands inside the pod:
@@ -199,7 +199,7 @@ kubectl get pods -n gamerank-ns
 kubectl exec -it <pod-name> -n gamerank-ns -- python manage.py createsuperuser
 ```
 
-*(Note: Because SQLite is being used inside the container without a Persistent Volume, any changes made to the database, including new users, will be lost if the pod restarts).*
+_(Note: Because SQLite is being used inside the container without a Persistent Volume, any changes made to the database, including new users, will be lost if the pod restarts)._
 
 ---
 
@@ -213,20 +213,20 @@ The workflow runs on a **self-hosted runner** and is **fully cross-platform**: i
 
 ### 🔄 Workflow Steps Summary
 
-| Step | Description |
-|---|---|
-| **Checkout code** | Clones the repository (no submodules, preserves runner logs) |
-| **Install Git for Windows** *(Windows only)* | Auto-installs Git for Windows via `winget` or `chocolatey` if missing |
-| **Start Docker & Minikube** | Opens Docker Desktop (macOS only) and starts Minikube if not running |
-| **GameRank Namespace** | Creates `gamerank-ns` namespace idempotently and sets it as default context |
-| **Build Docker Image** | Builds the app image: `nowelito28/gamerank:latest` |
-| **Load Image into Minikube** | Loads the local image directly into Minikube's internal registry |
-| **Enable Ingress Addon** | Enables the Nginx Ingress addon in Minikube (idempotent) |
-| **Deploy to Minikube** | Applies `deployment.yaml`, `service.yaml`, and `ingress.yaml` |
-| **Start Minikube Tunnel** *(macOS / Linux)* | Starts tunnel in background via `sudo` using secret `PASS` |
-| **Start Minikube Tunnel** *(Windows)* | Starts tunnel in background via `gsudo` (auto-installed) using secret `W_PASS` |
-| **Validation** | Waits dynamically for the deployment to be ready, then prints cluster state |
-| **Show App URL** | Prints the final access URL: `http://gamerank.127.0.0.1.nip.io` |
+| Step                                         | Description                                                                    |
+| -------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Checkout code**                            | Clones the repository (no submodules, preserves runner logs)                   |
+| **Install Git for Windows** _(Windows only)_ | Auto-installs Git for Windows via `winget` or `chocolatey` if missing          |
+| **Start Docker & Minikube**                  | Opens Docker Desktop (macOS only) and starts Minikube if not running           |
+| **GameRank Namespace**                       | Creates `gamerank-ns` namespace idempotently and sets it as default context    |
+| **Build Docker Image**                       | Builds the app image: `nowelito28/gamerank:latest`                             |
+| **Load Image into Minikube**                 | Loads the local image directly into Minikube's internal registry               |
+| **Enable Ingress Addon**                     | Enables the Nginx Ingress addon in Minikube (idempotent)                       |
+| **Deploy to Minikube**                       | Applies `deployment.yaml`, `service.yaml`, and `ingress.yaml`                  |
+| **Start Minikube Tunnel** _(macOS / Linux)_  | Starts tunnel in background via `sudo` using secret `PASS`                     |
+| **Start Minikube Tunnel** _(Windows)_        | Starts tunnel in background via `gsudo` (auto-installed) using secret `W_PASS` |
+| **Validation**                               | Waits dynamically for the deployment to be ready, then prints cluster state    |
+| **Show App URL**                             | Prints the final access URL: `http://gamerank.127.0.0.1.nip.io`                |
 
 ---
 
@@ -234,10 +234,10 @@ The workflow runs on a **self-hosted runner** and is **fully cross-platform**: i
 
 Go to your repository → **Settings → Secrets and variables → Actions → New repository secret** and add:
 
-| Secret | Used on | Description |
-|---|---|---|
-| `PASS` | macOS & Linux | Local sudo/admin password of the self-hosted runner machine |
-| `W_PASS` | Windows | Windows Administrator password of the self-hosted runner machine |
+| Secret   | Used on       | Description                                                      |
+| -------- | ------------- | ---------------------------------------------------------------- |
+| `PASS`   | macOS & Linux | Local sudo/admin password of the self-hosted runner machine      |
+| `W_PASS` | Windows       | Windows Administrator password of the self-hosted runner machine |
 
 > The Minikube tunnel needs admin/root privileges to bind to port 80. GitHub Actions **automatically masks** these values in all logs.
 
@@ -246,34 +246,107 @@ Go to your repository → **Settings → Secrets and variables → Actions → N
 ### 🖥️ Prerequisites by Operating System
 
 #### 🍎 macOS
-| Requirement | Notes |
-|---|---|
-| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | The workflow opens it automatically if closed |
-| [Minikube](https://minikube.sigs.k8s.io/docs/start/) | Started automatically if not already running |
-| [kubectl](https://kubernetes.io/docs/tasks/tools/) | For applying K8s manifests and querying cluster state |
-| Self-hosted GitHub Actions runner | Register with label `self-hosted` |
-| GitHub secret `PASS` | Your macOS sudo password |
+
+| Requirement                                                       | Notes                                                 |
+| ----------------------------------------------------------------- | ----------------------------------------------------- |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | The workflow opens it automatically if closed         |
+| [Minikube](https://minikube.sigs.k8s.io/docs/start/)              | Started automatically if not already running          |
+| [kubectl](https://kubernetes.io/docs/tasks/tools/)                | For applying K8s manifests and querying cluster state |
+| Self-hosted GitHub Actions runner                                 | Register with label `self-hosted`                     |
+| GitHub secret `PASS`                                              | Your macOS sudo password                              |
 
 #### 🐧 Linux
-| Requirement | Notes |
-|---|---|
-| Docker (daemon active as a service) | Must be running before the workflow starts |
-| [Minikube](https://minikube.sigs.k8s.io/docs/start/) | Started automatically if not already running |
-| [kubectl](https://kubernetes.io/docs/tasks/tools/) | For applying K8s manifests and querying cluster state |
-| Self-hosted GitHub Actions runner | Register with label `self-hosted` |
-| GitHub secret `PASS` | Your Linux sudo password |
+
+| Requirement                                          | Notes                                                 |
+| ---------------------------------------------------- | ----------------------------------------------------- |
+| Docker (daemon active as a service)                  | Must be running before the workflow starts            |
+| [Minikube](https://minikube.sigs.k8s.io/docs/start/) | Started automatically if not already running          |
+| [kubectl](https://kubernetes.io/docs/tasks/tools/)   | For applying K8s manifests and querying cluster state |
+| Self-hosted GitHub Actions runner                    | Register with label `self-hosted`                     |
+| GitHub secret `PASS`                                 | Your Linux sudo password                              |
 
 #### 🪟 Windows
-| Requirement | Notes |
-|---|---|
-| Docker Desktop | Must be running before the workflow starts |
-| [Minikube](https://minikube.sigs.k8s.io/docs/start/) | Started automatically if not already running |
-| [kubectl](https://kubernetes.io/docs/tasks/tools/) | For applying K8s manifests and querying cluster state |
-| [Git for Windows](https://git-scm.com/download/win) | **Auto-installed** via `winget` or `choco` if not present |
-| `winget` or [Chocolatey](https://chocolatey.org/) | Required to auto-install Git and `gsudo`. `winget` is built-in on Windows 10 21H2+ |
-| [`gsudo`](https://github.com/gerardog/gsudo) | **Auto-installed** — equivalent of Unix `sudo` for Windows, accepts passwords non-interactively |
-| Self-hosted GitHub Actions runner | Register with label `self-hosted` |
-| GitHub secret `W_PASS` | Your Windows Administrator password |
+
+| Requirement                                          | Notes                                                                                           |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Docker Desktop                                       | Must be running before the workflow starts                                                      |
+| [Minikube](https://minikube.sigs.k8s.io/docs/start/) | Started automatically if not already running                                                    |
+| [kubectl](https://kubernetes.io/docs/tasks/tools/)   | For applying K8s manifests and querying cluster state                                           |
+| [Git for Windows](https://git-scm.com/download/win)  | **Auto-installed** via `winget` or `choco` if not present                                       |
+| `winget` or [Chocolatey](https://chocolatey.org/)    | Required to auto-install Git and `gsudo`. `winget` is built-in on Windows 10 21H2+              |
+| [`gsudo`](https://github.com/gerardog/gsudo)         | **Auto-installed** — equivalent of Unix `sudo` for Windows, accepts passwords non-interactively |
+| Self-hosted GitHub Actions runner                    | Register with label `self-hosted`                                                               |
+| GitHub secret `W_PASS`                               | Your Windows Administrator password                                                             |
+
+---
+
+### 🤖 Setting Up the Self-Hosted GitHub Actions Runner
+
+This workflow uses `runs-on: self-hosted`, which means **GitHub will NOT use its own cloud servers** — instead it will look for a runner program installed and running on your local machine.
+
+> ⚠️ **This is a one-time manual setup per machine.** The runner cannot install itself automatically (it must exist before any workflow can run).
+
+**1. Go to your repository on GitHub and navigate to:**
+`Settings → Actions → Runners → New self-hosted runner`
+
+**2. Select your OS and follow the commands shown. Here is a summary:**
+
+#### 🍎 macOS / 🐧 Linux
+
+```bash
+# Create a directory for the runner
+mkdir actions-runner && cd actions-runner
+
+# Download the runner package (replace the URL with the one GitHub shows you)
+curl -o actions-runner-osx-x64.tar.gz -L https://github.com/actions/runner/releases/download/vX.X.X/actions-runner-osx-x64-X.X.X.tar.gz
+
+# Extract it
+tar xzf ./actions-runner-osx-x64.tar.gz
+
+# Configure it (use the token and URL that GitHub gives you in the UI)
+./config.sh --url https://github.com/YOUR_USER/YOUR_REPO --token YOUR_TOKEN
+
+# Run to link runner to GitHub cloud account (keep this terminal open, or install it as a service below)
+./run.sh
+```
+
+To run it **as a background service** (so it survives reboots):
+
+```bash
+# Install and start as a service (macOS/Linux)
+sudo ./svc.sh install
+sudo ./svc.sh start
+```
+
+#### 🪟 Windows (PowerShell as Administrator)
+
+```powershell
+# Create a directory for the runner
+mkdir actions-runner; cd actions-runner
+
+# Download the runner package (replace the URL with the one GitHub shows you)
+Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/vX.X.X/actions-runner-win-x64-X.X.X.zip -OutFile actions-runner-win-x64.zip
+
+# Extract it
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64.zip", "$PWD")
+
+# Configure it (use the token and URL from GitHub)
+./config.cmd --url https://github.com/YOUR_USER/YOUR_REPO --token YOUR_TOKEN
+
+# Start the runner
+./run.cmd
+```
+
+To run it **as a Windows service** (so it survives reboots):
+
+```powershell
+./svc.ps1 install
+./svc.ps1 start
+```
+
+**3. Verify the runner is online:**  
+Go to `Settings → Actions → Runners` in your repository — the runner should appear with a green ✅ `Idle` status. Once it's idle, GitHub will send jobs to it automatically when you push to `main`.
 
 ---
 
