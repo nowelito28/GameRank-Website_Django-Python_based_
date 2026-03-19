@@ -8,3 +8,4 @@ GameRank/games/__pycache__/
 GameRank/games/migrations/__pycache__/
 GameRank/games/templates/.DS_Store
 GameRank/static/.DS_Store
+actions-runner/
