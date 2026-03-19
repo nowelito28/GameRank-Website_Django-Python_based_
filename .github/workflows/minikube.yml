@@ -58,7 +58,7 @@ jobs:
       - name: Start Minikube Tunnel and Validations
         run: |
           echo "Matando túneles antiguos por si acaso..."
-          echo "${{ secrets.MAC_PASS }}" | sudo pkill -f "minikube tunnel" || true
+          echo "${{ secrets.MAC_PASS }}" | sudo -S pkill -f "minikube tunnel" || true
 
           echo "El tunnel corre en segundo plano y redirige la salida al fichero tunnel.log"
           echo "${{ secrets.MAC_PASS }}" | sudo -S nohup minikube tunnel > tunnel.log 2>&1 &
