@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: false  # Evita que Git busque submódulos fantasmas
+          clean: false       # Evita que Git borre tus logs o archivos del runner (como tunnel.log)
       - name: Start Docker and Minikube
         run: |
           echo "Verificando que Docker y Minikube estén funcionando en tu Mac..."
